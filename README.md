@@ -12,10 +12,6 @@ Here's what is in the project:
 
 This is a very simple "Hello World" project to help get you started.
 
-If you're using VS Code, install my [Angular code snippets](https://blog.codewithdan.com/2017/04/01/angular-2-typescript-and-html-snippets-for-vs-code/) 
-to simplify the process of writing Angular code. The code snippets make it easy
-to build Angular components, services, pipes, directives and more.
-
 
 ## Running the Application
 
