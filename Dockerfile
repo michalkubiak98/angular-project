@@ -25,4 +25,4 @@ FROM nginx:latest
 COPY --from=build /usr/local/app/dist /usr/share/nginx/html
 
 # Expose port 8081
-EXPOSE 8081
+EXPOSE 80
