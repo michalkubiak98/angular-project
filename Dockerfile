@@ -7,7 +7,7 @@ FROM node:16 as build
 WORKDIR /usr/local/app
 
 # Add the source code to app
-COPY ./ /usr/local/app/
+COPY . .
 
 # Install all the dependencies
 RUN npm install
@@ -19,10 +19,12 @@ RUN npm run build
 # Stage 2: Serve app with nginx server
 
 # Use official nginx image as the base image
-FROM nginx:latest
-
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/app/dist /usr/share/nginx/html
+COPY --from=build /usr/local/app/dist .
 
-# Expose port 8081
+# Expose port 80
 EXPOSE 80
